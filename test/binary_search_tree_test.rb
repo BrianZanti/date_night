@@ -47,4 +47,16 @@ class BinarySearchTreeTest < Minitest::Test
     assert @bst.root.left.right.left.left.empty?
     assert @bst.root.left.right.left.right.empty?
   end
+
+  def test_can_insert_muliple
+    @bst.insert(5, "5") #root
+    @bst.insert(1, "1") #root.left
+    @bst.insert(6, "6") #root.right
+    @bst.insert(3, "3") #root.left.right
+    @bst.insert(2, "2")
+
+    assert @bst.include? 5
+    assert @bst.include? 3
+    refute @bst.include? 10
+  end
 end
