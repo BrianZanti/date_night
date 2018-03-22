@@ -4,7 +4,7 @@ class BinarySearchTree
   attr_reader :root
 
   def initialize
-    @root = nil
+    @root = Node.new(nil,nil,true)
   end
 
   def insert(score, name)
