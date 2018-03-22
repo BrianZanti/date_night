@@ -13,8 +13,8 @@ class BinarySearchTreeTest < Minitest::Test
     assert_instance_of BinarySearchTree, @bst
   end
 
-  def test_it_has_nil_root
-    assert_nil @bst.root
+  def test_it_has_empty_root
+    assert @bst.root.empty?
   end
 
   def test_can_insert_at_root
