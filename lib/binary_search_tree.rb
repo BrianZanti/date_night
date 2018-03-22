@@ -20,8 +20,6 @@ class BinarySearchTree
   def insert_recursive(current_node, score, name)
     if current_node.empty?
       current_node.fill(score,name)
-      current_node.left = Node.new(nil,nil,true)
-      current_node.right = Node.new(nil,nil,true)
     else
       next_node = get_next_node(current_node, score)
       insert_recursive(next_node, score, name)
