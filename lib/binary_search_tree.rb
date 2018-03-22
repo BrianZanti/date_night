@@ -20,4 +20,15 @@ class BinarySearchTree
     return current_node.left if score < current_node.score
     current_node.right
   end
+
+  def include?(score, current_node = @root)
+    if current_node.empty?
+      return false
+    elsif(score == current_node.score)
+      return true
+    else
+      next_node = get_next_node(current_node, score)
+      return include?(score, next_node)
+    end
+  end
 end
