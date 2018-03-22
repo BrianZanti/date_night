@@ -20,6 +20,8 @@ class Node
   def fill(score, name)
     @score = score
     @name = name
+    @left = Node.new(nil,nil,true)
+    @right = Node.new(nil,nil,true)
     @empty = false
   end
 end
