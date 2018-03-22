@@ -8,4 +8,30 @@ class NodeTest < Minitest::Test
     assert_instance_of Node, node
   end
 
+  def test_it_has_score
+    node = Node.new(45,"name")
+    assert_equal 45, node.score
+  end
+
+  def test_it_has_name
+    node = Node.new(45,"name")
+    assert_equal "name", node.name
+  end
+
+  def test_it_has_nil_children
+    node = Node.new(nil,nil)
+    assert_nil node.left
+    assert_nil node.right
+  end
+
+  def test_children_can_be_set
+    node = Node.new(nil,nil)
+    left = Node.new(nil,nil)
+    right = Node.new(nil,nil)
+    node.left = left
+    node.right = right
+    assert_equal left, node.left
+    assert_equal right, node.right
+  end
+
 end
