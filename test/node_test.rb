@@ -50,5 +50,7 @@ class NodeTest < Minitest::Test
     refute node.empty?
     assert_equal 25, node.score
     assert_equal "hello", node.name
+    assert node.left.empty?
+    assert node.right.empty?
   end
 end
