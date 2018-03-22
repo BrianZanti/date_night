@@ -3,12 +3,18 @@ class Node
               :name
 
   attr_accessor :left,
-                :right
+                :right,
+                :empty
 
-  def initialize(score, name)
+  def initialize(score, name, empty = false)
     @score = score
     @name = name
     @right = nil
     @left = nil
+    @empty = empty
+  end
+
+  def empty?
+    @empty
   end
 end
