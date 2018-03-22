@@ -44,9 +44,11 @@ class NodeTest < Minitest::Test
     assert node.empty?
   end
 
-  def test_empty_can_be_changed
+  def test_empty_can_be_filled
     node = Node.new(nil,nil,true)
-    node.empty = false
+    node.fill(25, "hello")
     refute node.empty?
+    assert_equal 25, node.score
+    assert_equal "hello", node.name
   end
 end
