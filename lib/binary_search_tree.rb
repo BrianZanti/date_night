@@ -18,17 +18,25 @@ class BinarySearchTree
 
   def insert_recursive(current_node, new_node)
     if new_node.score < current_node.score
-      if current_node.left == nil
-        current_node.left = new_node
-      else
-        insert_recursive(current_node.left, new_node)
-      end
+      insert_left(current_node, new_node)
     else
-      if current_node.right == nil
-        current_node.right = new_node
-      else
-        insert_recursive(current_node.right, new_node)
-      end
+      insert_right(current_node, new_node)
+    end
+  end
+
+  def insert_left(current_node, new_node)
+    if current_node.left == nil
+      current_node.left = new_node
+    else
+      insert_recursive(current_node.left, new_node)
+    end
+  end
+
+  def insert_right(current_node, new_node)
+    if current_node.right == nil
+      current_node.right = new_node
+    else
+      insert_recursive(current_node.right, new_node)
     end
   end
 end
