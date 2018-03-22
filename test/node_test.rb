@@ -34,4 +34,19 @@ class NodeTest < Minitest::Test
     assert_equal right, node.right
   end
 
+  def test_it_is_not_empty_by_default
+    node = Node.new(nil,nil)
+    refute node.empty?
+  end
+
+  def test_it_can_be_empty
+    node = Node.new(nil,nil,true)
+    assert node.empty?
+  end
+
+  def test_empty_can_be_changed
+    node = Node.new(nil,nil,true)
+    node.empty = false
+    refute node.empty?
+  end
 end
