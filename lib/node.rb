@@ -8,5 +8,7 @@ class Node
   def initialize(score, name)
     @score = score
     @name = name
+    @right = nil
+    @left = nil
   end
 end
