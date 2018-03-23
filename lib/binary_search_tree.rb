@@ -31,4 +31,14 @@ class BinarySearchTree
       return include?(score, next_node)
     end
   end
+
+  def depth_of(score, current_node = @root, depth = 0)
+    if score == current_node.score
+      return depth
+    else
+      next_node = get_next_node(current_node, score)
+      return depth_of(score, next_node, depth + 1)
+    end
+  end
+
 end
