@@ -49,4 +49,12 @@ class BinarySearchTree
     end
   end
 
+  def max(current_node = @root)
+    if current_node.right.empty?
+      return {current_node.name => current_node.score}
+    else
+      return max(current_node.right)
+    end
+  end
+
 end
