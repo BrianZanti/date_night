@@ -80,6 +80,6 @@ class BinarySearchTreeTest < Minitest::Test
 
   def test_count
     assert_equal 5, @bst.count
-    assert_equal 3, @bst.count(@bst.left)
+    assert_equal 3, @bst.count(@bst.root.left)
   end
 end
