@@ -77,4 +77,9 @@ class BinarySearchTreeTest < Minitest::Test
     }
     assert_equal expected, @bst.max
   end
+
+  def test_count
+    assert_equal 5, @bst.count
+    assert_equal 3, @bst.count(@bst.left)
+  end
 end
