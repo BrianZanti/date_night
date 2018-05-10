@@ -41,4 +41,12 @@ class BinarySearchTree
     end
   end
 
+  def count(current_node = @root)
+    unless current_node.empty?
+      return 1 + count(current_node.left) + count(current_node.right)
+    else
+      return 0
+    end
+  end
+
 end
