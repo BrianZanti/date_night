@@ -57,4 +57,12 @@ class BinarySearchTree
     end
   end
 
+  def min(current_node = @root)
+    if current_node.left.empty?
+      return {current_node.name => current_node.score}
+    else
+      return min(current_node.left)
+    end
+  end
+
 end
